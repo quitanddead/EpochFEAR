@@ -153,7 +153,7 @@ DZAI_freshSpawnSafeArea = true;
 --------------------------------------------------------------------------------------------------------------------*/		
 
 //Maximum number of placed random spawns on map
-DZAI_maxRandomSpawns = 10;
+DZAI_maxRandomSpawns = 5;
 
 //Time to wait before despawning all AI units in random spawn area when no players are present. (Default: 120)
 DZAI_randDespawnWait = 120;
@@ -202,7 +202,7 @@ DZAI_airWeapons = [
 --------------------------------------------------------------------------------------------------------------------*/	
 
 //Global maximum number of active AI land vehicle patrols. Set at 0 to disable (Default: 0).	
-DZAI_maxLandPatrols = 10;
+DZAI_maxLandPatrols = 5;
 
 //Set minimum and maximum wait time in seconds to respawn an AI vehicle patrol after vehicle is destroyed or disabled. (Default: Min 600, Max 900).
 DZAI_respawnTMinL = 600;

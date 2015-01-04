@@ -56,6 +56,7 @@ if (!isDedicated) then {
 	execVM "FEAR\service_point\service_point.sqf";				// Service Point refuel/repair
 	execVM "FEAR\trade_from_vehicle\setup\init.sqf";			// Trade from backpack/vehicle
 	execVM "FEAR\DZAI_Client\dzai_initclient.sqf";				// DZAI client-side addon
+	execVM "FEAR\custom\spawn_zombie_herd.sql";				// Spawn zombie herd
 	execVM "FEAR\NUKE\NUKEinit.sqf";					// NUKE!
 };
 

@@ -48,7 +48,7 @@ dayz_maxZeds = 500;				// Total zombie limit (Default: 500)
 dayz_maxLocalZombies = 30; 			// Max number of zombies spawned per player. (Default: 15)
 dayz_maxGlobalZombiesInit = 40;			// Starting global max zombie count, this will increase for each player within 400m (Default: 40)
 dayz_maxGlobalZombiesIncrease = 10;		// Global zombie limit increase per player within 400m (Default: 10)
-dayz_zedsAttackVehicles = true;			// Zombies attacking vehicles. (Default: true)
+dayz_zedsAttackVehicles = false;		// Zombies attacking vehicles. (Default: true)
 
 //Animal Variables
 dayz_maxAnimals = 10; 				// Default: 8

@@ -1,5 +1,4 @@
 private["_i","_genzombie","_playerpos","_agent","_zombieselectedpos"];
-
 ZombieType = ["zZombie_Base", "z_worker3", "z_worker2", "z_worker1", "z_villager1", "z_villager2", "z_villager3", "z_worker3", "z_worker2", "z_worker1", "z_villager1", "z_villager2", "z_villager3", "z_worker3", "z_worker2", "z_worker1", "z_villager1", "z_villager2", "z_villager3"];
 
 while {(!isDedicated) && (true)} do {
@@ -10,8 +9,8 @@ while {(!isDedicated) && (true)} do {
 	
 	_playerpos = getposATL player;
 	
-	for "_i" from 1 to 50 do
-	{
+	// Spawn 50 zombies at players location!
+	for "_i" from 1 to 50 do {
 		_genzombie = ZombieType call BIS_fnc_selectRandom;
 		_agent = createAgent [_genzombie, _playerpos, [], 40, "NONE"];
 		_zombieselectedpos = getPosATL _agent;

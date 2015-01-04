@@ -36,28 +36,28 @@ If (isServer) then {
 	execVM "\z\addons\dayz_server\FEAR\bases\berezinonavalbase.sqf";	// Berezino naval base
 	execVM "\z\addons\dayz_server\FEAR\bases\northwestairfield.sqf";	// North west airfield
 	execVM "\z\addons\dayz_server\FEAR\bases\zelenogorskaddons.sqf";	// Zelenogorsk additions
-	execVM "\z\addons\dayz_server\FEAR\bases\billboards.sqf";			// Billboards
-	execVM "\z\addons\dayz_server\FEAR\bases\tikhaya_city.sqf";			// Other people's map additions
-	execVM "\z\addons\dayz_server\FEAR\bases\lhd.sqf";					// Aircraft carrier in Chernogorsk
+	execVM "\z\addons\dayz_server\FEAR\bases\billboards.sqf";		// Billboards
+	execVM "\z\addons\dayz_server\FEAR\bases\tikhaya_city.sqf";		// Other people's map additions
+	execVM "\z\addons\dayz_server\FEAR\bases\lhd.sqf";			// Aircraft carrier in Chernogorsk
 	execVM "\z\addons\dayz_server\FEAR\bases\dk_ChernoBlocks.sqf";		// Apartment Blocks to the north of Cherno
 	execVM "\z\addons\dayz_server\FEAR\bases\dk_ChernoHill.sqf";		// Base east of Cherno on the small Hill
 	execVM "\z\addons\dayz_server\FEAR\bases\dk_GrassCutter.sqf";
 	execVM "\z\addons\dayz_server\FEAR\bases\dk_Medvedskoye.sqf";		// 3,5km long road from Pobeda Dam leads to the new Town
-	execVM "\z\addons\dayz_server\FEAR\bases\dk_Skalisty.sqf";			// Skalisty Island
+	execVM "\z\addons\dayz_server\FEAR\bases\dk_Skalisty.sqf";		// Skalisty Island
 };
 
 if (!isDedicated) then {
-	execVM "FEAR\custom\server_welcomecredits.sqf";		// Server welcome messages
-	execVM "FEAR\custom\custom_monitor.sqf";			// Custom debug monitor
-	execVM "FEAR\custom\fix_rating.sqf";				// Can't get in vehicle together when the other player is wearing a hostile skill
-	execVM "FEAR\custom\loginCamera.sqf";				// Intro camera scene
-	execVM "FEAR\custom\earthquake_event.sqf";			// Earthquake event
-	execVM "FEAR\custom\ambientSFX.sqf";	 		 	// Ambient sound FX (this needs to be after SHK_pos as it is used in that script)
-	execVM "FEAR\service_point\service_point.sqf";		// Service Point refuel/repair
-	execVM "FEAR\trade_from_vehicle\setup\init.sqf";	// Trade from backpack/vehicle
-	execVM "FEAR\DZAI_Client\dzai_initclient.sqf";			// DZAI client-side addon
+	execVM "FEAR\custom\server_welcomecredits.sqf";				// Server welcome messages
+	execVM "FEAR\custom\custom_monitor.sqf";				// Custom debug monitor
+	execVM "FEAR\custom\fix_rating.sqf";					// Can't get in vehicle together when the other player is wearing a hostile skill
+	execVM "FEAR\custom\loginCamera.sqf";					// Intro camera scene
+	execVM "FEAR\custom\earthquake_event.sqf";				// Earthquake event
+	execVM "FEAR\custom\ambientSFX.sqf";	 		 		// Ambient sound FX (this needs to be after SHK_pos as it is used in that script)
+	execVM "FEAR\service_point\service_point.sqf";				// Service Point refuel/repair
+	execVM "FEAR\trade_from_vehicle\setup\init.sqf";			// Trade from backpack/vehicle
+	execVM "FEAR\DZAI_Client\dzai_initclient.sqf";				// DZAI client-side addon
 	execVM "FEAR\NUKE\NUKEinit.sqf";					// NUKE!
 };
 
-execVM "FEAR\R3F_ARTY_AND_LOG\init.sqf";				// R3F Lift and Tow
+execVM "FEAR\R3F_ARTY_AND_LOG\init.sqf";					// R3F Lift and Tow
 execVM "FEAR\safezone\init.sqf";						// Trader safe zones

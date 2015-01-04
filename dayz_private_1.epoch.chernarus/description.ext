@@ -1,0 +1,365 @@
+respawn = "BASE";
+respawndelay = 5;
+onLoadMission= "DayZ Epoch Chernarus";
+OnLoadIntro = "Welcome to DayZ Epoch Chernarus";
+OnLoadIntroTime = false;
+OnLoadMissionTime = false;
+disabledAI = true;
+disableChannels[]= {0,2,6};
+enableItemsDropping = 0;
+
+briefing = 0;
+debriefing = 0;
+
+onPauseScript = "";
+loadScreen = "FEAR\art\fearloadscrn.jpg";			// Custom loading screen
+#include "FEAR\R3F_ARTY_AND_LOG\desc_include.h"		// Lift & Tow
+#include "FEAR\snap_pro\snappoints.hpp"				// Snap Building Pro https://github.com/raymix/SnapPro
+
+class Header
+{
+ gameType = COOP;            //DM, Team, Coop, ...
+ minPlayers = 1;             //min # of players the mission supports
+ maxPlayers = 100;           //Max # of players the mission supports
+};
+
+aiKills = 1;
+diagRadio = 1;
+diagHit = 1;
+
+class RscText
+{
+	type = 0;
+	idc = -1;
+	x = 0;
+	y = 0;
+	h = 0.037;
+	w = 0.3;
+	style = 0x100; 
+	font = Zeppelin32;
+	SizeEx = 0.03921;
+	colorText[] = {1,1,1,1};
+	colorBackground[] = {0, 0, 0, 0};
+	linespacing = 1;
+};
+class RscPicture
+{
+	access=0;
+	type=0;
+	idc=-1;
+	style=48;
+	colorBackground[]={0,0,0,0};
+	colorText[]={1,1,1,1};
+	font="TahomaB";
+	sizeEx=0;
+	lineSpacing=0;
+	text="";
+};
+class RscLoadingText : RscText
+{
+	style = 2;
+	x = 0.323532;
+	y = 0.666672;
+	w = 0.352944;
+	h = 0.039216;
+	sizeEx = 0.03921;
+	colorText[] = {0.543,0.5742,0.4102,1.0};
+};
+class RscProgress
+{
+	x = 0.344;
+	y = 0.619;
+	w = 0.313726;
+	h = 0.0261438;
+	texture = "\ca\ui\data\loadscreen_progressbar_ca.paa";
+	colorFrame[] = {0,0,0,0};
+	colorBar[] = {1,1,1,1};
+};
+class RscProgressNotFreeze
+{
+	idc = -1;
+	type = 45;
+	style = 0;
+	x = 0.022059;
+	y = 0.911772;
+	w = 0.029412;
+	h = 0.039216;
+	texture = "#(argb,8,8,3)color(0,0,0,0)";
+};
+//
+// the loading screen itself
+//
+class DayZ_loadingScreen
+{ 
+	idd = -1;
+	duration = 10e10;
+	fadein = 0;
+	fadeout = 0;
+	name = "loading screen";
+	class controlsBackground
+	{
+		class blackBG : RscText
+		{
+			x = safezoneX;
+			y = safezoneY;
+			w = safezoneW;
+			h = safezoneH;
+			text = "";
+			colorText[] = {0,0,0,0};
+			colorBackground[] = {0,0,0,1};
+		};
+		/*
+		class nicePic : RscPicture
+		{
+			style = 48 + 0x800; // ST_PICTURE + ST_KEEP_ASPECT_RATIO
+			x = safezoneX + safezoneW/2 - 0.25;
+			y = safezoneY + safezoneH/2 - 0.2;
+			w = 0.5;
+			h = 0.4;
+			text = "img\nicePic.paa";
+		};
+		*/
+	};
+	class controls
+	{
+		class Title1 : RscLoadingText
+		{
+			text = "$STR_LOADING"; // "Loading" text in the middle of the screen
+		};
+		class CA_Progress : RscProgress // progress bar, has to have idc 104
+		{
+			idc = 104;
+			type = 8; // CT_PROGRESS
+			style = 0; // ST_SINGLE
+			texture = "\ca\ui\data\loadscreen_progressbar_ca.paa";
+		};
+		class CA_Progress2 : RscProgressNotFreeze // progress bar that will go reverse
+		{
+			idc = 103;
+		};
+		class Name2: RscText // the text on the top-left
+		{
+			idc = 101;
+			x = 0.05;
+			y = 0.029412;
+			w = 0.9;
+			h = 0.04902;
+			text = "";
+			sizeEx = 0.05;
+			colorText[] = {0.543,0.5742,0.4102,1.0};
+		};
+	};
+};
+
+// CE FEAR ------------------------------------------------------
+class RscTitles {
+	
+		// Lift & Tow
+		#include "FEAR\R3F_ARTY_AND_LOG\desc_rsct_include.h"
+		
+		// Bottom left watermark
+        class wm_disp {
+                idd = -1;
+                onLoad = "uiNamespace setVariable ['wm_disp', _this select 0]";
+                fadein = 0;
+                fadeout = 0;
+                duration = 10e10;
+                controlsBackground[] = {};
+                objects[] = {};
+                class controls {
+                        class wm_text2 {
+                                idc = 1;
+                                x = safeZoneX+0.027;//safeZoneW*0.01;
+                                y = safeZoneY+safeZoneH-0.16;
+								// CE 13/02/2014 Enable > 6 characters in server watermark text (bottom left of screen)
+                                w = 1.151*safeZoneH; //0.151*safeZoneH;
+                                h = 0.057*safeZoneH;
+                                shadow = 2;
+									class Attributes
+									{
+										font = "EtelkaNarrowMediumPro";
+										color = "#24FFFFFF";
+										align = "left"; // put "center" here if you want some background
+										valign = "middle";
+										shadow = 2;
+									};
+                                colorBackground[] = { 1, 0.3, 0, 0 };  // uncomment and increase 4th number to have a background
+                                font = "EtelkaNarrowMediumPro";
+                                size = 0.06*safeZoneH;
+                                type = 13;
+                                style = 0;
+                                text="";
+                        };
+                };
+        };
+
+		// Custom death screen
+		titles[] = {"DeathScr"};
+		class DeathScr {
+			idd = -1;
+			movingEnable = 0;
+			duration = 10;
+			fadein = 2;
+			fadeout = 2;
+			name="DeathScr";
+			controls[]={"Picture"};
+			class Picture {
+				x = safezoneX; y = safezoneY; w = safezoneW; h = safezoneH;
+				text="DeathScr.paa";
+				sizeEx = -1;
+				type=0;
+				idc=-1;
+				style=48;
+				colorBackground[]={0,0,0,0};
+				colorText[]={1,1,1,1};
+				font="Bitstream";
+			};
+		};
+
+};
+
+class CfgSounds
+{
+    sounds[] ={introsound, deathscream, nukedaisy, nukesiren, nukenear, nukefar, nukeradiation, wolfhowl1, girlscreaming, snappingtwigs, doorcreak1, leafcrunch, metalcrash, woodlandcrunch, zombienoise1, childrenlaughing, eeriewind, doorcreak2, babycry1, glassbreak1};
+	
+    class introsound
+    {
+		name="introsound";
+		sound[]={"FEAR\soundfx\introsound.ogg", db + 0, 1.0};
+		titles[] = {};
+    };
+	
+	class deathscream
+    {
+		name="deathscream";
+		sound[]={"FEAR\soundfx\deathscream.ogg", db + 30, 1.0};
+		titles[] = {};
+    };
+	
+	class nukedaisy
+    {
+		name="nukedaisy";
+		sound[]={"FEAR\soundfx\nukedaisy.ogg", db + 0, 1.0};
+		titles[] = {};
+    };
+	
+	class nukesiren
+    {
+		name="nukesiren";
+		sound[]={"FEAR\soundfx\nukesiren.ogg", db + 30, 1.0};
+		titles[] = {};
+    };
+	
+	class nukenear
+    {
+		name="nukenear";
+		sound[]={"FEAR\soundfx\nukenear.ogg", db + 30, 1.0};
+		titles[] = {};
+    };
+	
+	class nukefar
+    {
+		name="nukefar";
+		sound[]={"FEAR\soundfx\nukefar.ogg", db + 30, 1.0};
+		titles[] = {};
+    };
+	
+	class nukeradiation
+    {
+		name="nukeradiation";
+		sound[]={"FEAR\soundfx\nukeradiation.ogg", db + 0, 1.0};
+		titles[] = {};
+    };
+	
+	class wolfhowl1
+    {
+        name = "wolfhowl1";
+        sound[] = {"FEAR\soundfx\wolfhowl1.ogg", db + 0, 1.0};
+        titles[] = {};
+    };
+	
+	class girlscreaming
+    {
+        name = "girlscreaming";
+        sound[] = {"FEAR\soundfx\girlscreaming.ogg", db + 0, 1.0};
+        titles[] = {};
+    };
+	
+	class snappingtwigs
+    {
+        name = "snappingtwigs";
+        sound[] = {"FEAR\soundfx\snappingtwigs.ogg", db - 5, 1.0};
+        titles[] = {};
+    };
+	
+	class doorcreak1
+    {
+        name = "doorcreak1";
+        sound[] = {"FEAR\soundfx\doorcreak1.ogg", db + 0, 1.0};
+        titles[] = {};
+    };
+	
+	class leafcrunch
+    {
+        name = "leafcrunch";
+        sound[] = {"FEAR\soundfx\leafcrunch.ogg", db - 10, 1.0};
+        titles[] = {};
+    };
+	
+	class metalcrash
+    {
+        name = "metalcrash";
+        sound[] = {"FEAR\soundfx\metalcrash.ogg", db + 0, 1.0};
+        titles[] = {};
+    };
+	
+	class woodlandcrunch
+    {
+        name = "woodlandcrunch";
+        sound[] = {"FEAR\soundfx\woodlandcrunch.ogg", db - 5, 1.0};
+        titles[] = {};
+    };
+	
+	class zombienoise1
+    {
+        name = "zombienoise1";
+        sound[] = {"FEAR\soundfx\zombienoise1.ogg", db + 0, 1.0};
+        titles[] = {};
+    };
+	
+	class childrenlaughing
+    {
+        name = "childrenlaughing";
+        sound[] = {"FEAR\soundfx\childrenlaughing.ogg", db + 0, 1.0};
+        titles[] = {};
+    };
+	
+	class eeriewind
+    {
+        name = "eeriewind";
+        sound[] = {"FEAR\soundfx\eeriewind.ogg", db + 0, 1.0};
+        titles[] = {};
+    };
+	
+	class doorcreak2
+    {
+        name = "doorcreak2";
+        sound[] = {"FEAR\soundfx\doorcreak2.ogg", db + 0, 1.0};
+        titles[] = {};
+    };
+	
+	class babycry1
+    {
+        name = "babycry1";
+        sound[] = {"FEAR\soundfx\babycry1.ogg", db + 0, 1.0};
+        titles[] = {};
+    };
+	
+	class glassbreak1
+    {
+        name = "glassbreak1";
+        sound[] = {"FEAR\soundfx\glassbreak1.ogg", db + 0, 1.0};
+        titles[] = {};
+    };
+};
+// ----------------------------------------------------------------------------------------

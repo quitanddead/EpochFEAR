@@ -1,0 +1,2 @@
+zombieHerd = true;
+publicVariable "zombieHerd";

@@ -7,6 +7,7 @@ AllowedVehiclesList = [
 ["C130J_US_EP1_DZ",1],
 ["car_hatchback",3],
 ["car_sedan",3],
+["CH53_DZE",1],
 ["CH_47F_EP1_DZE",1],
 ["CSJ_GyroC",3],
 ["CSJ_GyroCover",3],
@@ -111,6 +112,5 @@ AllowedVehiclesList = [
 ["Volha_1_TK_CIV_EP1",3],
 ["Volha_2_TK_CIV_EP1",3],
 ["VWGolf",3],
-["Zodiac",3],
-["CH53_DZE",1]
+["Zodiac",3]
 ];

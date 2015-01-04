@@ -37,7 +37,7 @@ If (isServer) then {
 	execVM "\z\addons\dayz_server\FEAR\bases\northwestairfield.sqf";	// North west airfield
 	execVM "\z\addons\dayz_server\FEAR\bases\zelenogorskaddons.sqf";	// Zelenogorsk additions
 	execVM "\z\addons\dayz_server\FEAR\bases\billboards.sqf";		// Billboards
-	execVM "\z\addons\dayz_server\FEAR\bases\tikhaya_city.sqf";		// Other people's map additions
+	execVM "\z\addons\dayz_server\FEAR\bases\tikhaya_city.sqf";		// City in SW corner
 	execVM "\z\addons\dayz_server\FEAR\bases\lhd.sqf";			// Aircraft carrier in Chernogorsk
 	execVM "\z\addons\dayz_server\FEAR\bases\dk_ChernoBlocks.sqf";		// Apartment Blocks to the north of Cherno
 	execVM "\z\addons\dayz_server\FEAR\bases\dk_ChernoHill.sqf";		// Base east of Cherno on the small Hill
@@ -54,6 +54,7 @@ if (!isDedicated) then {
 	execVM "FEAR\custom\earthquake_event.sqf";				// Earthquake event
 	execVM "FEAR\custom\ambientSFX.sqf";	 		 		// Ambient sound FX (this needs to be after SHK_pos as it is used in that script)
 	execVM "FEAR\custom\spawn_zombie_herd.sql";				// Spawn zombie herd
+	
 	execVM "FEAR\service_point\service_point.sqf";				// Service Point refuel/repair
 	execVM "FEAR\trade_from_vehicle\setup\init.sqf";			// Trade from backpack/vehicle
 	execVM "FEAR\DZAI_Client\dzai_initclient.sqf";				// DZAI client-side addon

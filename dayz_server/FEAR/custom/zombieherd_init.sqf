@@ -47,7 +47,7 @@ _fnc_createTriggers = {
 if (isDedicated) then {
 	private["_i","_numberOfTriggers"];
 	
-	_numberOfTriggers = 9; // total triggers to create on map
+	_numberOfTriggers = 10; // total triggers to create on map
 	
 	for "_i" from 0 to _numberOfTriggers do {
 		[_i] call _fnc_createTriggers;

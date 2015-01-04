@@ -65,7 +65,7 @@ AllowedVehiclesList = [
 ["Pickup_PK_GUE_DZE",3],
 ["Pickup_PK_INS_DZE",3],
 ["Pickup_PK_TK_GUE_EP1_DZE",3],
-["pook_H13_gunship", 3],
+["pook_H13_gunship",3],
 ["RHIB",3],
 ["S1203_ambulance_EP1",3],
 ["S1203_TK_CIV_EP1",3],

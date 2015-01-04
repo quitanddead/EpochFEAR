@@ -18,9 +18,9 @@ if(isServer) then {
 		ai_clean_dead 				= true;			// clear bodies after certain amount of time
 		ai_cleanup_time 			= 7200;			// time to clear bodies in seconds
 		ai_clean_roadkill			= false; 		// clean bodies that are roadkills
-		ai_roadkill_damageweapon	= 0;			// percentage of chance a roadkill will destroy weapon AI is carrying
+		ai_roadkill_damageweapon		= 0;			// percentage of chance a roadkill will destroy weapon AI is carrying
 
-		ai_bandit_combatmode		= "YELLOW";		// combatmode of bandit AI
+		ai_bandit_combatmode			= "YELLOW";		// combatmode of bandit AI
 		ai_bandit_behaviour			= "COMBAT";		// behaviour of bandit AI
 
 		ai_hero_combatmode			= "YELLOW";		// combatmode of hero AI
@@ -47,8 +47,8 @@ if(isServer) then {
 		ai_static_skills			= false;	// Allows you to set custom array for AI on static weapons. (true: On false: Off) 
 		ai_static_array				= [["aimingAccuracy",0.20],["aimingShake",0.70],["aimingSpeed",0.75],["endurance",1.00],["spotDistance",0.70],["spotTime",0.50],["courage",1.00],["reloadSpeed",1.00],["commanding",1.00],["general",1.00]];
 
-		ai_gear0					= [["ItemBandage","ItemBandage","ItemPainkiller"],["ItemKnife","ItemFlashlight"]];
-		ai_gear1					= [["ItemBandage","ItemBandage","ItemPainkiller"],["ItemKnife","ItemFlashlight"]];
+		ai_gear0				= [["ItemBandage","ItemBandage","ItemPainkiller"],["ItemKnife","ItemFlashlight"]];
+		ai_gear1				= [["ItemBandage","ItemBandage","ItemPainkiller"],["ItemKnife","ItemFlashlight"]];
 		ai_gear_random				= [ai_gear0,ai_gear1];	// Allows the possibility of random gear
 
 		ai_wep_assault				= [["M16A4_ACG","30Rnd_556x45_Stanag"],["Sa58V_RCO_EP1","30Rnd_762x39_AK47"],["SCAR_L_STD_Mk4CQT","30Rnd_556x45_Stanag"],["M8_sharpshooter","30Rnd_556x45_Stanag"],["M4A1_HWS_GL_camo","30Rnd_556x45_Stanag"],["SCAR_L_STD_HOLO","30Rnd_556x45_Stanag"],["M4A3_CCO_EP1","30Rnd_556x45_Stanag"],["M4A3_CCO_EP1","30Rnd_556x45_Stanag"],["M4A1_AIM_SD_camo","30Rnd_556x45_StanagSD"],["M16A4","30Rnd_556x45_Stanag"],["m8_carbine","30Rnd_556x45_Stanag"],["BAF_L85A2_RIS_Holo","30Rnd_556x45_Stanag"],["Sa58V_CCO_EP1","30Rnd_762x39_AK47"]];	// Assault
@@ -58,13 +58,13 @@ if(isServer) then {
 		ai_wep_launchers_AT			= ["M136","RPG18","JAVELIN"];
 		ai_wep_launchers_AA			= ["Strela","Igla","STINGER"];
 		
-		ai_packs					= ["DZ_Czech_Vest_Puch","DZ_ALICE_Pack_EP1","DZ_TK_Assault_Pack_EP1","DZ_British_ACU","DZ_GunBag_EP1","DZ_CivilBackpack_EP1","DZ_Backpack_EP1","DZ_LargeGunBag_EP1"];
+		ai_packs				= ["DZ_Czech_Vest_Puch","DZ_ALICE_Pack_EP1","DZ_TK_Assault_Pack_EP1","DZ_British_ACU","DZ_GunBag_EP1","DZ_CivilBackpack_EP1","DZ_Backpack_EP1","DZ_LargeGunBag_EP1"];
 		ai_hero_skin				= ["FR_AC","FR_AR","FR_Corpsman","FR_GL","FR_Marksman","FR_R","FR_Sapper","FR_TL"];
 		ai_bandit_skin				= ["Ins_Soldier_GL_DZ","TK_INS_Soldier_EP1_DZ","TK_INS_Warlord_EP1_DZ","GUE_Commander_DZ","GUE_Soldier_Sniper_DZ","GUE_Soldier_MG_DZ","GUE_Soldier_Crew_DZ","GUE_Soldier_2_DZ","GUE_Soldier_CO_DZ","BanditW1_DZ","BanditW2_DZ","Bandit1_DZ","Bandit2_DZ"];
 		ai_special_skin				= ["Functionary1_EP1_DZ"];
-		ai_all_skin					= [ai_hero_skin,ai_bandit_skin,ai_special_skin];
+		ai_all_skin				= [ai_hero_skin,ai_bandit_skin,ai_special_skin];
 
-		ai_add_skin					= true;			// adds unit skin to inventory on death
+		ai_add_skin				= true;			// adds unit skin to inventory on death
 		
 	/* END AI CONFIG */
 
@@ -82,10 +82,10 @@ if(isServer) then {
 		
 		wai_mission_timer			= [300,900];						// time between missions 5-15 minutes
 		wai_mission_timeout			= [900,1800]; 						// time each missions takes to despawn if inactive 15-30 minutes
-		wai_timeout_distance		= 1000;								// if a player is this close to a mission then it won't time-out
+		wai_timeout_distance			= 1000;								// if a player is this close to a mission then it won't time-out
 		
 		wai_clean_mission			= true;								// clean all mission buildings after a certain period
-		wai_clean_mission_time		= 1800;								// time after a mission is complete to clean mission buildings
+		wai_clean_mission_time			= 1800;								// time after a mission is complete to clean mission buildings
 
 		wai_mission_fuel			= [10,20];							// fuel inside mission spawned vehicles [min%,max%]
 		wai_vehicle_damage			= [20,80];							// damages to spawn vehicles with [min%,max%]
@@ -100,9 +100,9 @@ if(isServer) then {
 		wai_kill_percent			= 30;								// percentage of AI players that must be killed at "crate" missions to be able to trigger completion
 
 		wai_high_value				= true;								// enable the possibility of finding a high value item (defined below crate_items_high_value) inside a crate
-		wai_high_value_chance		= 1;								// chance in percent you find above mentioned item
+		wai_high_value_chance			= 1;								// chance in percent you find above mentioned item
 
-		wai_enable_minefield		= true;								// enable minefields to better defend missions
+		wai_enable_minefield			= true;								// enable minefields to better defend missions
 		wai_use_launchers			= false;							// add a rocket launcher to each spawned AI group
 		wai_remove_launcher			= false;							// remove rocket launcher from AI on death
 
@@ -131,7 +131,7 @@ if(isServer) then {
 										["weapon_cache",10]
 									];
 		/*
-		wai_special_missions		= [
+		wai_special_missions			= [
 										["bunny_ranch",100]
 									];
 		*/
@@ -150,24 +150,24 @@ if(isServer) then {
 		crates_medium				= ["USBasicWeaponsBox","RUBasicWeaponsBox","USSpecialWeaponsBox","USSpecialWeapons_EP1","RUSpecialWeaponsBox","SpecialWeaponsBox","TKSpecialWeapons_EP1","CZBasicWeapons_EP1","UNBasicWeapons_EP1"];
 		crates_small				= ["GuerillaCacheBox","RULaunchersBox","RUBasicAmmunitionBox","RUOrdnanceBox","USBasicAmmunitionBox","USLaunchersBox","USOrdnanceBox","USOrdnanceBox_EP1","USLaunchers_EP1","USBasicWeapons_EP1","USBasicAmmunitionBox_EP1","UNBasicAmmunitionBox_EP1","TKOrdnanceBox_EP1","TKLaunchers_EP1","TKBasicAmmunitionBox_EP1","GuerillaCacheBox_EP1","GERBasicWeapons_EP1"];
 
-		crate_weapons_buildables	= [["ChainSaw","ItemJerryMixed"],["ChainSawB","ItemJerryMixed"],["ChainSawG","ItemJerryMixed"],["ChainSawP","ItemJerryMixed"],["ChainSawR","ItemJerryMixed"]];
+		crate_weapons_buildables		= [["ChainSaw","ItemJerryMixed"],["ChainSawB","ItemJerryMixed"],["ChainSawG","ItemJerryMixed"],["ChainSawP","ItemJerryMixed"],["ChainSawR","ItemJerryMixed"]];
 		
-		crate_tools					= ["ItemKeyKit","Binocular","Binocular_Vector","ItemCompass","ItemCrowbar","ItemEtool","ItemFishingPole","ItemFlashlightRed","ItemGPS","ItemHatchet_DZE","ItemKnife","ItemMachete","ItemMatchbox_DZE","ItemToolbox","NVGoggles"];
-		crate_tools_buildable		= ["ItemToolbox","ItemEtool","ItemCrowbar","ItemKnife"];
+		crate_tools				= ["ItemKeyKit","Binocular","Binocular_Vector","ItemCompass","ItemCrowbar","ItemEtool","ItemFishingPole","ItemFlashlightRed","ItemGPS","ItemHatchet_DZE","ItemKnife","ItemMachete","ItemMatchbox_DZE","ItemToolbox","NVGoggles"];
+		crate_tools_buildable			= ["ItemToolbox","ItemEtool","ItemCrowbar","ItemKnife"];
 		crate_tools_sniper			= ["ItemCompass","Binocular","Binocular_Vector","NVGoggles","ItemGPS"];
 
-		crate_items					= ["FoodNutmix","FoodPistachio","FoodMRE","ItemSodaOrangeSherbet","ItemSodaRbull","ItemSodaR4z0r","ItemSodaMdew","ItemSodaPepsi","ItemBandage","ItemSodaCoke","FoodbaconCooked","FoodCanBakedBeans","FoodCanFrankBeans","FoodCanPasta","FoodCanSardines","FoodchickenCooked","FoodmuttonCooked","FoodrabbitCooked","ItemTroutCooked","ItemTunaCooked","ItemSeaBassCooked","ItemAntibiotic","ItemBloodbag","ItemEpinephrine","ItemHeatPack","ItemMorphine","ItemGoldBar","ItemGoldBar10oz","CinderBlocks","ItemCanvas","ItemComboLock","ItemLightBulb","ItemLockbox","ItemSandbag","ItemTankTrap","ItemWire","MortarBucket","PartEngine","PartFueltank","PartGeneric","PartGlass","PartPlankPack","PartVRotor","PartWheel","PartWoodPile"];
-		crate_items_high_value		= ["ItemBriefcase100oz","ItemVault","30m_plot_kit","ItemHotwireKit"];
+		crate_items				= ["FoodNutmix","FoodPistachio","FoodMRE","ItemSodaOrangeSherbet","ItemSodaRbull","ItemSodaR4z0r","ItemSodaMdew","ItemSodaPepsi","ItemBandage","ItemSodaCoke","FoodbaconCooked","FoodCanBakedBeans","FoodCanFrankBeans","FoodCanPasta","FoodCanSardines","FoodchickenCooked","FoodmuttonCooked","FoodrabbitCooked","ItemTroutCooked","ItemTunaCooked","ItemSeaBassCooked","ItemAntibiotic","ItemBloodbag","ItemEpinephrine","ItemHeatPack","ItemMorphine","ItemGoldBar","ItemGoldBar10oz","CinderBlocks","ItemCanvas","ItemComboLock","ItemLightBulb","ItemLockbox","ItemSandbag","ItemTankTrap","ItemWire","MortarBucket","PartEngine","PartFueltank","PartGeneric","PartGlass","PartPlankPack","PartVRotor","PartWheel","PartWoodPile"];
+		crate_items_high_value			= ["ItemBriefcase100oz","ItemVault","30m_plot_kit","ItemHotwireKit"];
 		crate_items_food			= ["ItemWaterbottle","FoodNutmix","FoodPistachio","FoodMRE","ItemSodaOrangeSherbet","ItemSodaRbull","ItemSodaR4z0r","ItemSodaMdew","ItemSodaPepsi","ItemSodaCoke","FoodbaconCooked","FoodCanBakedBeans","FoodCanFrankBeans","FoodCanPasta","FoodCanSardines","FoodchickenCooked","FoodmuttonCooked","FoodrabbitCooked","ItemTroutCooked","ItemTunaCooked","ItemSeaBassCooked"];
-		crate_items_buildables		= ["forest_large_net_kit","cinder_garage_kit",["PartPlywoodPack",5],"ItemSandbagExLarge5X","park_bench_kit","ItemComboLock",["CinderBlocks",10],"ItemCanvas","ItemComboLock",["ItemLightBulb",5],"ItemLockbox",["ItemSandbag",10],["ItemTankTrap",10],["ItemWire",10],["MortarBucket",10],["PartPlankPack",5],"PartWoodPile"];
-		crate_items_vehicle_repair	= ["PartEngine","PartFueltank","PartGeneric","PartGlass","PartVRotor","PartWheel"];
+		crate_items_buildables			= ["forest_large_net_kit","cinder_garage_kit",["PartPlywoodPack",5],"ItemSandbagExLarge5X","park_bench_kit","ItemComboLock",["CinderBlocks",10],"ItemCanvas","ItemComboLock",["ItemLightBulb",5],"ItemLockbox",["ItemSandbag",10],["ItemTankTrap",10],["ItemWire",10],["MortarBucket",10],["PartPlankPack",5],"PartWoodPile"];
+		crate_items_vehicle_repair		= ["PartEngine","PartFueltank","PartGeneric","PartGlass","PartVRotor","PartWheel"];
 		crate_items_medical			= ["ItemWaterbottle","ItemAntibiotic","ItemBloodbag","ItemEpinephrine","ItemHeatPack","ItemMorphine","ItemBandage","FoodCanFrankBeans","FoodCanPasta"];
-		crate_items_chainbullets	= ["2000Rnd_762x51_M134","200Rnd_762x51_M240","100Rnd_127x99_M2","150Rnd_127x107_DSHKM"];
+		crate_items_chainbullets		= ["2000Rnd_762x51_M134","200Rnd_762x51_M240","100Rnd_127x99_M2","150Rnd_127x107_DSHKM"];
 		crate_items_sniper			= [["ItemPainkiller",5],"Skin_Sniper1_DZ","Skin_CZ_Soldier_Sniper_EP1_DZ","Skin_GUE_Soldier_Sniper_DZ"];
-		crate_items_president		= ["ItemDocument","ItemGoldBar10oz"];
+		crate_items_president			= ["ItemDocument","ItemGoldBar10oz"];
 
 		crate_backpacks_all			= ["DZ_Patrol_Pack_EP1","DZ_Assault_Pack_EP1","DZ_Czech_Vest_Puch","DZ_TerminalPack_EP1","DZ_ALICE_Pack_EP1","DZ_TK_Assault_Pack_EP1","DZ_CompactPack_EP1","DZ_British_ACU","DZ_GunBag_EP1","DZ_CivilBackpack_EP1","DZ_Backpack_EP1","DZ_LargeGunBag_EP1"];
-		crate_backpacks_large		= ["DZ_GunBag_EP1","DZ_Backpack_EP1","DZ_LargeGunBag_EP1","DZ_CivilBackpack_EP1"];
+		crate_backpacks_large			= ["DZ_GunBag_EP1","DZ_Backpack_EP1","DZ_LargeGunBag_EP1","DZ_CivilBackpack_EP1"];
 
 		crate_random				= [crate_items,crate_items_food,crate_items_buildables,crate_items_vehicle_repair,crate_items_medical,crate_items_chainbullets];
 

@@ -10,7 +10,6 @@ while {(!isDedicated) && (true)} do {
 	
 	_playerpos = getposATL player;
 	
-	_i = 1;
 	for "_i" from 1 to 50 do
 	{
 		_genzombie = ZombieType call BIS_fnc_selectRandom;

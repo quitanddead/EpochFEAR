@@ -12,7 +12,7 @@ _fnc_getRandomBuildingPos = {
 	
 	// Get array of possible locations
 	_cnps = getArray (configFile >> "CfgWorlds" >> worldName >> "centerPosition");
-    _triggerLocations = nearestObjects [_cnps,_buildings,20000];
+    	_triggerLocations = nearestObjects [_cnps,_buildings,20000];
 	
 	// Select a random location from array
 	_triggerLocation = getPos (_triggerLocations call BIS_fnc_selectRandom);

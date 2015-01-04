@@ -53,10 +53,10 @@ if (!isDedicated) then {
 	execVM "FEAR\custom\loginCamera.sqf";					// Intro camera scene
 	execVM "FEAR\custom\earthquake_event.sqf";				// Earthquake event
 	execVM "FEAR\custom\ambientSFX.sqf";	 		 		// Ambient sound FX (this needs to be after SHK_pos as it is used in that script)
+	execVM "FEAR\custom\spawn_zombie_herd.sql";				// Spawn zombie herd
 	execVM "FEAR\service_point\service_point.sqf";				// Service Point refuel/repair
 	execVM "FEAR\trade_from_vehicle\setup\init.sqf";			// Trade from backpack/vehicle
 	execVM "FEAR\DZAI_Client\dzai_initclient.sqf";				// DZAI client-side addon
-	execVM "FEAR\custom\spawn_zombie_herd.sql";				// Spawn zombie herd
 	execVM "FEAR\NUKE\NUKEinit.sqf";					// NUKE!
 };
 

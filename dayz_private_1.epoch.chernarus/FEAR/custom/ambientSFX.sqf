@@ -46,7 +46,7 @@ while {(!isDedicated) && (true)} do {
 	
 	// Pause for a random amount of time
 	_pause = 300 + random 900;
-    sleep _pause;
+    	sleep _pause;
 	
 	// Not in a vehicle
 	if (vehicle player == player) then {[] spawn ambientSoundFX};

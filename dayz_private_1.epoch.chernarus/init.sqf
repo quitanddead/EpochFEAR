@@ -51,7 +51,7 @@ dayz_maxGlobalZombiesIncrease = 10;		// Global zombie limit increase per player 
 dayz_zedsAttackVehicles = false;		// Zombies attacking vehicles. (Default: true)
 
 //Animal Variables
-dayz_maxAnimals = 10; 				// Default: 8
+dayz_maxAnimals = 16; 				// Default: 8
 dayz_tameDogs = true;				// Default: false
 
 //Trader Variables
@@ -68,7 +68,7 @@ DZE_SelfTransfuse = true;			// Default: false
 DZE_selfTransfuse_Values = [6000, 15, 300];	// Default: [12000, 15, 300]; = [blood amount, infection chance, cool-down (seconds)]
 
 //Name Tags
-DZE_ForceNameTags = false;			// Default: false
+DZE_ForceNameTags = true;			// Default: false
 DZE_ForceNameTagsOff = false;			// Default: false
 DZE_ForceNameTagsInTrader = false;		// Default: false
 DZE_HumanityTargetDistance = 25;		// Default: 25
@@ -111,7 +111,6 @@ DZE_modularBuild = true;			// Turn on Snap Build Pro and the modular player buil
 // This will fire the crash_spawner.sqf at the top of the hour and again on 30 mins.
 EpochEvents = [
 ["any","any","any","any",0,"crash_spawner"],
-["any","any","any","any",30,"crash_spawner"],
 ["any","any","any","any",15,"supply_drop"]
 ];
 

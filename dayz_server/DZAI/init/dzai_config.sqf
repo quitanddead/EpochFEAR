@@ -82,7 +82,7 @@ DZAI_lastManStanding = true;
 --------------------------------------------------------------------------------------------------------------------*/	
 
 //Enable to use client-side radio addon for radio messages instead of remote execution method. (Default: false)
-DZAI_clientRadio = true;
+DZAI_clientRadio = false;
 
 //Enable or disable AI hostility to zombies. If enabled, AI units spawned by DZAI will attack nearby zombies. (Default: false)
 DZAI_zombieEnemy = true;	

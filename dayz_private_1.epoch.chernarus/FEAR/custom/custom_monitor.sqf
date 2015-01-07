@@ -11,7 +11,7 @@ fnc_debug = {
         _headShots = player getVariable["headShots",0];
 	_fps = round(diag_fps);
 		
-	// Displays [Survivor]
+	// Displays player name
 	//_txt = '';
         //_txt = (gettext (configFile >> 'CfgVehicles' >> (typeof vehicle player) >> 'displayName'));
 		
@@ -20,7 +20,7 @@ fnc_debug = {
 	{
 		_pic = (gettext (configFile >> 'CfgWeapons' >> (currentWeapon player) >> 'picture'));
 	}
-		else
+	else
 	{
 		_pic = (gettext (configFile >> 'CfgVehicles' >> (typeof vehicle player) >> 'picture'));
 	};

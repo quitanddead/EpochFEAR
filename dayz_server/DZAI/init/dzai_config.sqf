@@ -71,7 +71,7 @@ DZAI_tempNVGs = false;
 DZAI_humanityGain = 25;										
 
 //If enabled, players with radios will be given text warnings if they are being pursued by AI groups. (Default: true)
-DZAI_radioMsgs = true;
+DZAI_radioMsgs = false;
 
 //If enabled, last surviving unit of a group will be granted slightly boosted skills. No effect if unit is spawned alone (Default: false)
 DZAI_lastManStanding = true;
@@ -82,7 +82,7 @@ DZAI_lastManStanding = true;
 --------------------------------------------------------------------------------------------------------------------*/	
 
 //Enable to use client-side radio addon for radio messages instead of remote execution method. (Default: false)
-DZAI_clientRadio = false;
+DZAI_clientRadio = true;
 
 //Enable or disable AI hostility to zombies. If enabled, AI units spawned by DZAI will attack nearby zombies. (Default: false)
 DZAI_zombieEnemy = true;	

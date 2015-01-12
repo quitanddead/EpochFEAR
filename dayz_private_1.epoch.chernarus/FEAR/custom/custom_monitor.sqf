@@ -1,4 +1,4 @@
-private["_killsZ","_killsH","_killsB","_humanity","_headShots","_fps","_pic","_stime","_HoursTillRestart","_serverRestart","_hours","_minutes"];
+private["_killsZ","_killsH","_killsB","_humanity","_headShots","_fps","_pic","_stime","_HoursTillRestart","_serverRestartMinutes"];
 
 fnc_debug = {
     debugMonitor = true;
@@ -10,7 +10,8 @@ fnc_debug = {
         _humanity = round(player getVariable["humanity",0]);
         _headShots = player getVariable["headShots",0];
 	_fps = round(diag_fps);
-		
+	_serverRestartMinutes = round(240-(serverTime) / 60);
+	
 	_pic = (gettext (configFile >> 'CfgVehicles' >> (typeof vehicle player) >> 'picture'));
 	if (player == vehicle player) then
 	{
@@ -20,20 +21,6 @@ fnc_debug = {
 	{
 		_pic = (gettext (configFile >> 'CfgVehicles' >> (typeof vehicle player) >> 'picture'));
 	};
-	
-	_stime = serverTime;
-    	_HoursTillRestart = 6; //how many hours between restarts
-    	_serverRestart = _HoursTillRestart - 1;
-    	_hours = (_stime/60/60);
-    	_hours = toArray (str _hours);
-    	_hours resize 1;
-    	_hours = toString _hours;
-    	_hours = compile _hours;
-    	_hours = call _hours;
-    	_minutes = round(_stime/60);
-    	_minutes = _minutes - (_hours*60);
-    	_hours = _serverRestart - _hours;
-    	_minutes = 60 - _minutes;
 								
         hintSilent parseText format ["
         	<img size='4.75' image='%1'/><br/>
@@ -45,7 +32,7 @@ fnc_debug = {
 	        <t size='1' font='Bitstream' align='left' color='#EEC900'>Murders:</t><t size='1' font='Bitstream' align='right' color='#FFFFFF'>%7</t><br/>
 	        <t size='1' font='Bitstream' align='left' color='#EEC900'>Headshots:</t><t size='1' font='Bitstream' align='right' color='#FFFFFF'>%8</t><br/>
 	        <t size='1' font='Bitstream' align='left' color='#EEC900'>FPS:</t><t size='1' font='Bitstream' align='right' color='#FFFFFF'>%9</t><br/>
-		<t size='1' font='Bitstream' align='left' color='#EEC900'>Restart:</t><t size='1' font='Bitstream' align='right' color='#FFFFFF'>%10h %11m</t><br/>
+		<t size='1' font='Bitstream' align='left' color='#EEC900'>Restart:</t><t size='1' font='Bitstream' align='right' color='#FFFFFF'>%10m</t><br/>
         	",
 		_pic,
 		r_player_blood,
@@ -56,8 +43,7 @@ fnc_debug = {
 		_killsH,
 		_headShots,
 		_fps,
-		_hours,
-        	_minutes];
+		_serverRestartMinutes];
 		
     sleep 1;
     };

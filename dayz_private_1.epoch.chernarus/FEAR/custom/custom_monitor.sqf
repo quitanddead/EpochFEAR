@@ -10,7 +10,7 @@ fnc_debug = {
         _humanity = round(player getVariable["humanity",0]);
         _headShots = player getVariable["headShots",0];
 	_fps = round(diag_fps);
-	_serverRestartMinutes = round(240-(serverTime) / 60);
+	_serverRestartMinutes = round(360-(serverTime) / 60); // 360 = 60*6 = 6 hours server restart
 	
 	_pic = (gettext (configFile >> 'CfgVehicles' >> (typeof vehicle player) >> 'picture'));
 	if (player == vehicle player) then

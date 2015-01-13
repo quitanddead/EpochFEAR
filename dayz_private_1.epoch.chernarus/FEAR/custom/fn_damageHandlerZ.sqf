@@ -48,26 +48,26 @@ switch (_this select 1) do { // Depending on which part of body is damaged
 };
 
 // Do not put a semicolon or comment after the next line otherwise the script will not output the correct result
-
 if (local _zed) then {
-if (_damage > 1 and _projectile != "") then {
-//Record deliberate critical damages
-switch (_selection) do {
-case "head_hit": {
-if (!(_zed getVariable["hitRegistered",false])) then {
-_headShots = _hitter getVariable["headShots",0];
-_hitter setVariable["headShots",(_headShots + 1),true];
-_zed setVariable["hitRegistered",true];
-};
-};
-};
-if (_projectile isKindOf "Bolt") then {
-_damageOrg = _hitter getVariable["firedDamage",0]; //_unit getVariable["firedSelection",_selection];
-if (_damageOrg < _damage) then {
-_hitter setVariable["firedHit",[_zed,_selection],true];
-_hitter setVariable["firedDamage",_damage,true];
-};
-};
-};
+    if (_damage > 1 and _projectile != "") then {
+        //Record deliberate critical damages
+        switch (_selection) do {
+            case "head_hit": {
+                if (!(_zed getVariable["hitRegistered",false])) then {
+                    _headShots = _hitter getVariable["headShots",0];
+                    _hitter setVariable["headShots",(_headShots + 1),true];
+                    _zed setVariable["hitRegistered",true];
+                };
+            };
+        };
+        
+        if (_projectile isKindOf "Bolt") then {
+            _damageOrg = _hitter getVariable["firedDamage",0]; //_unit getVariable["firedSelection",_selection];
+            if (_damageOrg < _damage) then {
+                _hitter setVariable["firedHit",[_zed,_selection],true];
+                _hitter setVariable["firedDamage",_damage,true];
+            };
+        };
+    };
 };
 _damage

@@ -32,7 +32,7 @@ _safezoneZonePerm = {
 
 		_pos = [_a,_b,0];
 		_angle = _angle + _step;
-		diag_log format["Spawn sign at: %1", _pos];
+		//diag_log format["Spawn sign at: %1", _pos];
 		_sign = createVehicle ["SignM_FARP_Winchester_EP1", _pos, [], 0, "CAN_COLLIDE"];
 		_sign setVehicleInit "this setObjectTexture [0, ""FEAR\safezone\sign.paa""];";
 		_sign setDir ([_pos, _trigger_pos] call BIS_fnc_DirTo);

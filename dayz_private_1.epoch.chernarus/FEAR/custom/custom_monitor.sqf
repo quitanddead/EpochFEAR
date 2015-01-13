@@ -1,16 +1,15 @@
-private["_killsZ","_killsH","_killsB","_humanity","_headShots","_fps","_pic","_serverRestartMinutes"];
+private["_pic","_humanity","_killsZ","_killsB","_killsH","_headShots","_fps","_serverRestartMinutes"];
 
 fnc_debug = {
-    debugMonitor = true;
-    while {debugMonitor} do
-    {
-	_pic = (gettext (configFile >> 'CfgVehicles' >> (typeof vehicle player) >> 'picture'));
+    while {true} do
+    {	
+    	// If not in vehicle
 	if (player == vehicle player) then
-	{
+	{	// Get current weapon
 		_pic = (gettext (configFile >> 'CfgWeapons' >> (currentWeapon player) >> 'picture'));
 	}
 	else
-	{
+	{	// Get current vehicle
 		_pic = (gettext (configFile >> 'CfgVehicles' >> (typeof vehicle player) >> 'picture'));
 	};
 	_humanity = round(player getVariable["humanity",0]);

@@ -1,13 +1,13 @@
 // ------------------------------------------
-//	Earthquake event
-//	Uses NUKEEnvironment earthQuake function
+// Earthquake event
+// Uses NUKEEnvironment earthQuake function
 // ------------------------------------------
 
 while {(!isDedicated) && (true)} do {
 	triggerQuake = false;
-    sleep 1;
+    	sleep 1;
       
-    waitUntil {triggerQuake};
+    	waitUntil {triggerQuake};
 	
 	player spawn earthQuake;
 	

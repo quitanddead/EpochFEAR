@@ -1,11 +1,6 @@
-// --------------------------
-//	FEAR - Mission.PBO Init 
-// --------------------------
-
-// -------------------
-//	Global Variables
-// -------------------
-PVDZE_plr_LoginRecord = nil;	// Intro scene camera
+// ------------------------
+// FEAR - Mission.PBO Init 
+// ------------------------
 
 // ---------------------------------------------------------------------
 // Default player load-out
@@ -15,7 +10,8 @@ DefaultBackpack = "DZ_Patrol_Pack_EP1";
 DefaultBackpackWeapon = "";
 // ---------------------------------------------------------------------
 
-call compile preprocessFileLineNumbers "FEAR\custom\FEARVariables.sqf";	// Initialize the Variables (Important: must happen very early)
+// Initialize the Variables
+call compile preprocessFileLineNumbers "FEAR\custom\FEARVariables.sqf";
 call compile preprocessFileLineNumbers "FEAR\custom\FEARCompiles.sqf";
 
 // Server watermark: adding a logo in the bottom left corner of the screen with the server name in it

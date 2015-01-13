@@ -41,13 +41,15 @@ sleep 10; //Wait in seconds before the credits start after player IS ingame
  
 _role1 = "Welcome to";
 _role1names = ["Epoch F.E.A.R."];
+/*
 _role2 = "Server Mods";
 _role2names = ["Missions", "AI", "Self Blood Bag", "Indestructible Bases", "Lift/Tow", "etc..." ];
 _role3 = "Server Rules";
 _role3names = ["Don't be a dick", "Don't hack", "Don't cheat", "Have fun"];
 _role4 = "Special Thanks";
 _role4names = ["server.nitrado.net", "epochmod.com", "opendayz.net", "et al."];
- 
+*/
+
 {
 sleep 2;
 _memberFunction = _x select 0;
@@ -67,8 +69,10 @@ _onScreenTime,
 sleep (_onScreenTime);
 } forEach [
 //The list below should have exactly the same amount of roles as the list above
-[_role1, _role1names],
+[_role1, _role1names]
+/*
 [_role2, _role2names],
 [_role3, _role3names],
 [_role4, _role4names]
+*/
 ];

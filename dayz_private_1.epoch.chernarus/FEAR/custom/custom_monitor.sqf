@@ -4,6 +4,7 @@ fnc_debug = {
     debugMonitor = true;
     while {debugMonitor} do
     {
+    	_pic = (gettext (configFile >> 'CfgVehicles' >> (typeof vehicle player) >> 'picture'));
 	// If not in vehicle
 	if (player == vehicle player) then
 	{	// Get current weapon

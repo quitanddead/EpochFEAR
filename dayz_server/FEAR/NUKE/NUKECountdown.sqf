@@ -6,7 +6,10 @@ if (isDedicated) then {
 	private["_coords","_nukePad","_varName","_message"];
 	
 	// NUKETarget gets random position from list of all cities, towns and villages
-	_coords = call NUKETarget;
+	// Avoid Stary Sobor
+	while {townName = "Stary Sobor"} do {
+		_coords = call NUKETarget;
+	};
 	
 	diag_log format ["[NUKE]: Target: %1", townName];
 	
@@ -24,7 +27,8 @@ if (isDedicated) then {
 	_nukePad call compile format ["%1=_This ; PublicVariable ""%1""",_varName];
 
 	// Inform players to get the hell out of dodge!
-	_message = format["Remnants of the CDC have implemented a tactical solution to the infection. You have %1 minutes to get %2k clear of %3.",round(NUKEWarningPeriod/60),(nukeRadius/1000),townName];
+	// 3 minute timer till impact
+	_message = format["Remnants of the CDC have implemented a nuclear tactical solution to the infection. You have %1 minutes to get %2k clear of %3.",3,(nukeRadius/1000),townName];
 	[nil,nil,rTitleText,_message,"PLAIN",10] call RE;
 
 	// NUKEAddMarker is a simple script that adds a marker to the location
@@ -34,7 +38,12 @@ if (isDedicated) then {
 	nukeSiren = true;
 	publicVariable "nukeSiren";
 
-	sleep NUKEWarningPeriod;
+	// Wait 2 minutes
+	sleep 120;
+	// Give warning on 1 minute to go
+	_message = format["You now have %1 minute to get %2k clear of %3.",1,(nukeRadius/1000),townName];
+	[nil,nil,rTitleText,_message,"PLAIN",10] call RE;
+	sleep 60;
 	
 	// Broadcast nukeDetonate to clients
 	// This will enable the NUKE script

@@ -57,6 +57,10 @@ if (isDedicated) then {
 	
 	sleep 120; // wait 2 minutes before fallout creates the radzone
 	
+	// Inform players about radiation zone
+	_message = format["%1 is now irradiated. You will need to keep clear until the radiation cloud dissipates.",townName];
+	[nil,nil,rTitleText,_message,"PLAIN",10] call RE;
+	
 	// Add radiation zone marker
 	execVM "\z\addons\dayz_server\FEAR\NUKE\NUKEAddRadMarker.sqf";
 	// Activate radiation zone

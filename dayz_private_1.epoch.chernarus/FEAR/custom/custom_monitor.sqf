@@ -1,6 +1,9 @@
 private["_pic","_humanity","_killsZ","_killsB","_killsH","_headShots","_fps","_serverRestartMinutes"];
 
-[] spawn {
+fnc_debug = {
+    debugMonitor = true;
+    while {debugMonitor} do
+    {
 	// If not in vehicle
 	if (player == vehicle player) then
 	{	// Get current weapon
@@ -42,4 +45,7 @@ private["_pic","_humanity","_killsZ","_killsB","_killsH","_headShots","_fps","_s
 		_serverRestartMinutes];
 		
 	sleep 1;
+	};
 };
+
+[] spawn fnc_debug;

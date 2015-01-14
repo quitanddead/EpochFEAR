@@ -6,10 +6,7 @@ if (isDedicated) then {
 	private["_coords","_nukePad","_varName","_message"];
 	
 	// NUKETarget gets random position from list of all cities, towns and villages
-	// Avoid Stary Sobor
-	while {townName = "Stary Sobor"} do {
-		_coords = call NUKETarget;
-	};
+	_coords = call NUKETarget;
 	
 	diag_log format ["[NUKE]: Target: %1", townName];
 	

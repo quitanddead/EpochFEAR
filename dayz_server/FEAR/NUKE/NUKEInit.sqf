@@ -13,9 +13,6 @@ NUKETimerMin = 1800; // 30 minutes: 1800
 // A cruise missile will always launch before this much time has passed.
 NUKETimerMax = 5400; // 1.5 hours: 5400
 
-// Time until impact
-NUKEWarningPeriod = 180; // 3 minutes: 180
-
 // Blast radius in km
 nukeRadius = 1000;
 

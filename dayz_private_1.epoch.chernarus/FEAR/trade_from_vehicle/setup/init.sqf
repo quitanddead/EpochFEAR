@@ -3,7 +3,7 @@
 /* Modify these variables as you see fit.                               																			 */
 
 if ((isServer) || (isDedicated)) exitWith {diag_log "TFV, ERROR :: Tried to launch serverside where it does not belong!";};
-//waitUntil {!isNil "dayz_animalCheck"};
+waitUntil {!isNil "dayz_animalCheck"};
 
 TFV_ATFV = true;   // Allow trading from vehicles?
 TFV_ATFB = true;   // Allow trading from backpack?

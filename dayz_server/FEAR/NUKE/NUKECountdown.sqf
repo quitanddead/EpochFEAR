@@ -67,6 +67,9 @@ if (isDedicated) then {
 	_message = format["You will need to keep clear of %1 until the radiation cloud dissipates.",townName];
 	[nil,nil,rTitleText,_message,"PLAIN",10] call RE;
 	
+	nukeRadZone = True;
+	publicVariable "nukeRadZone";
+	
 	// Add radiation zone marker
 	execVM "\z\addons\dayz_server\FEAR\NUKE\NUKEAddRadMarker.sqf";
 	// Activate radiation zone
@@ -77,4 +80,7 @@ if (isDedicated) then {
 	
 	// Wait length of time for RadZone (15 minutes)
 	sleep 900;
+	
+	nukeRadZone = False;
+	publicVariable "nukeRadZone";
 };

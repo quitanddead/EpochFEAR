@@ -5,6 +5,7 @@ AllowedVehiclesList = [
 ["ATV_CZ_EP1",3],
 ["ATV_US_EP1",3],
 ["AW159_Lynx_BAF",1],
+["BAF_FV510_D", 1],
 ["C130J_US_EP1_DZ",1],
 ["car_hatchback",3],
 ["car_sedan",3],

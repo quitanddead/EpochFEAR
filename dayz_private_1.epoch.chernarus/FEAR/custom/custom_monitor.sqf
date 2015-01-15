@@ -20,7 +20,7 @@ fnc_debug = {
 	_killsH = player getVariable["humanKills",0];
 	_headShots = player getVariable["headShots",0];
 	_fps = round(diag_fps);
-	_serverRestartMinutes = round(360-(serverTime) / 60); // 360 minutes = 6 hours server restart
+	_serverRestartMinutes = round(365-(serverTime) / 60); // 360 minutes = 6 hours server restart (+5mins to account for server startup time)
 	
 	hintSilent parseText format ["
 		<img size='4.75' image='%1'/><br/>

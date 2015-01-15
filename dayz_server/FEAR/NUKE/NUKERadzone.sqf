@@ -7,9 +7,6 @@ if (isDedicated) then {
 	
 	_coords = _this select 0;
 	
-	nukeRadZone = True;
-	publicVariable "nukeRadZone";
-	
 	// Endurance of Radiation in air = 15 minutes (900 seconds)
 	for [{_x = 0},{_x < 900},{_x = _x + 1}] do {
 		{

@@ -54,6 +54,7 @@ if (!isDedicated) then {
 	execVM "FEAR\service_point\service_point.sqf";				// Service Point refuel/repair
 	execVM "FEAR\DZAI_Client\dzai_initclient.sqf";				// DZAI client-side addon
 	execVM "FEAR\NUKE\NUKEinit.sqf";					// NUKE!
+	execVM "FEAR\shk_pos\shk_pos_init.sqf";					// SHK functions
 };
 
 execVM "FEAR\R3F_ARTY_AND_LOG\init.sqf";					// R3F Lift and Tow

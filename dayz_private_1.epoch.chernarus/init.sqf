@@ -31,6 +31,7 @@ spawnArea= 1500; 				// Default: 1500
 dayz_paraSpawn = false;				// Default: false
 dayz_fullMoonNights = true;			// Default: false
 dayz_MapArea = 14000;				// Default: 10000
+Dayz_Dark_UI = true;
 
 //Do Not Edit - Chernarus Specific
 dayz_minpos = -1; 				// Do Not Edit - Chernarus Specific
